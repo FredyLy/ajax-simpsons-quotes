@@ -19,7 +19,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Simpsons Quotes</h1>
-      <p>Reload for another quote!</p>
+      <p>Click for another quote!</p>
+      <input type="button" value="New Quote" class="new-simpson">
 
       <div class="content" id="simpsons">
       </div>
@@ -33,6 +34,12 @@
   </script>
   
   <script>
+    let button = document.querySelector('.new-simpson')
+
+    button.addEventListener('click', () =>
+    fetchSimpsonsQuoteJSON()
+    )
+
     // This function loads Simpsons quotes data from the Simpsons Quote API
     function fetchSimpsonsQuoteJSON() {
   
@@ -47,6 +54,7 @@
       // Build a block of HTML
       const simpsonsHtml = `
       <div>  
+      
       <p><strong>${simpsons.character}</strong></p>
       <p><strong>${simpsons.quote}</strong></p>
         <img src="${simpsons.image}" />
