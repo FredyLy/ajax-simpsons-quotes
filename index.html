@@ -46,9 +46,13 @@
 
       // Build a block of HTML
       const simpsonsHtml = `
-        <p><strong>${simpsons.quote}</strong></p>
+      <div>  
+      <p><strong>${simpsons.character}</strong></p>
+      <p><strong>${simpsons.quote}</strong></p>
         <img src="${simpsons.image}" />
-      `;
+      </div>
+      
+        `;
       document.querySelector('#simpsons').innerHTML = simpsonsHtml;
     });
 
